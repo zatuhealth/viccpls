@@ -1,0 +1,6 @@
+import { Body, Button, Container, Head, Heading, Html, Preview, Text } from '@react-email/components';
+import type { TemplateEntry } from './registry';
+function Email({ vaccine = '', dueDate = '', member = '', clinician = '' }: { vaccine?: string; dueDate?: string; member?: string; clinician?: string }) {
+  return <Html><Head /><Preview>A vaccination date is approaching</Preview><Body style={{ backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }}><Container style={{ padding: '28px', maxWidth: '560px' }}><Heading>ZatuHealth</Heading><Heading as="h2">Vaccine due soon</Heading><Text>{member ? `${member}'s` : 'Your family’s'} {vaccine} vaccination is due on {dueDate}{clinician ? `, as confirmed by ${clinician}` : ''}.</Text><Text>Contact your clinic if the date needs to change.</Text><Button href="https://zatuhealth.com/app/vaccination" style={{ backgroundColor: '#2c6677', color: '#ffffff', padding: '12px 20px', borderRadius: '10px' }}>View vaccination records</Button></Container></Body></Html>;
+}
+export const template = { component: Email, subject: 'ZatuHealth: vaccine due soon', displayName: 'Vaccine due soon', previewData: { vaccine: 'MMR', dueDate: '2026-11-12', member: 'Ali J Jr.', clinician: 'Dr. Sarah Achieng' } } satisfies TemplateEntry;

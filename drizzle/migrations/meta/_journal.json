@@ -1,0 +1,118 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793192721699,
+      "tag": "0000_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793205589252,
+      "tag": "0001_family_welcome_delivery_queue",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793209027409,
+      "tag": "0002_prefer_completed_household",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793210061014,
+      "tag": "0003_clinic_staff",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793211866439,
+      "tag": "0004_overdue_sms_deliveries",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793213525183,
+      "tag": "0005_administrator_only_clinic_contacts",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793213565345,
+      "tag": "0006_parent_text_opt_in_audit",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793214320558,
+      "tag": "0007_clinic_staff_occupations_and_parent_links",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1793292530993,
+      "tag": "0008_vaccine_text_log",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1793293111049,
+      "tag": "0009_clinic_messages",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1793293852713,
+      "tag": "0010_bind_clinic_staff_to_account",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1793293966798,
+      "tag": "0011_guard_wallet_increase",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1793294538208,
+      "tag": "0012_guard_wallet_on_insert",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1793295015467,
+      "tag": "0013_clinic_replies_and_payments",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1793295982666,
+      "tag": "0014_platform_admins",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1793297103124,
+      "tag": "0015_multi_clinic_spaces",
+      "breakpoints": true
+    }
+  ]
+}

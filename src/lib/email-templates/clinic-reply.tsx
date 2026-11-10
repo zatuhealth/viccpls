@@ -1,0 +1,6 @@
+import { Body, Button, Container, Head, Heading, Html, Preview, Text } from '@react-email/components';
+import type { TemplateEntry } from './registry';
+function Email({ clinic = 'Your clinic', child = '', original = '', reply = '' }: { clinic?: string; child?: string; original?: string; reply?: string }) {
+  return <Html><Head /><Preview>{clinic} replied to your message</Preview><Body style={{ backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }}><Container style={{ padding: '28px', maxWidth: '560px' }}><Heading>ZatuHealth</Heading><Heading as="h2">{clinic} replied{child ? ` about ${child}` : ''}</Heading><Text style={{ whiteSpace: 'pre-wrap' }}>{reply}</Text>{original && <Text style={{ color: '#667', fontSize: '13px', whiteSpace: 'pre-wrap' }}>Your message: {original}</Text>}<Button href="https://zatuhealth.com/family" style={{ backgroundColor: '#2c6677', color: '#ffffff', padding: '12px 20px', borderRadius: '10px' }}>Open your family dashboard</Button></Container></Body></Html>;
+}
+export const template = { component: Email, subject: (d: Record<string, unknown>) => `${String(d['clinic'] ?? 'Your clinic')} replied to your message`, displayName: 'Clinic reply to parent', previewData: { clinic: 'Kampala Family Clinic', child: 'Abas', original: 'Can we move the next dose?', reply: 'Yes, Friday at 10am works.' } } satisfies TemplateEntry;

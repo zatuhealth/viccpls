@@ -1,0 +1,6 @@
+import { Body, Button, Container, Head, Heading, Html, Preview, Text } from '@react-email/components';
+import type { TemplateEntry } from './registry';
+function Email({ link = 'https://zatuhealth.com/family', clinic = '' }: { link?: string; clinic?: string }) {
+  return <Html><Head /><Preview>Your ZatuHealth family dashboard</Preview><Body style={{ backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }}><Container style={{ padding: '28px', maxWidth: '560px' }}><Heading>ZatuHealth</Heading><Heading as="h2">Your family dashboard is ready</Heading><Text>{clinic ? `${clinic} has invited you` : 'You have been invited'} to track your children’s vaccine schedules and doses on ZatuHealth.</Text><Button href={link} style={{ backgroundColor: '#2c6677', color: '#ffffff', padding: '12px 20px', borderRadius: '10px' }}>Open my dashboard</Button><Text style={{ color: '#667', fontSize: '12px' }}>This button signs you in once and expires soon. If it has expired, ask your clinic for a new one. Don’t forward this email.</Text></Container></Body></Html>;
+}
+export const template = { component: Email, subject: 'Your ZatuHealth family dashboard', displayName: 'Parent invite', previewData: { link: 'https://zatuhealth.com/family', clinic: 'Your clinic' } } satisfies TemplateEntry;

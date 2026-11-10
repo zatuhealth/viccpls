@@ -1,0 +1,6 @@
+import { Body, Button, Container, Head, Heading, Html, Preview, Text } from '@react-email/components';
+import type { TemplateEntry } from './registry';
+function Email({ date = '', time = '', clinic = '', branch = '', mode = '' }: { date?: string; time?: string; clinic?: string; branch?: string; mode?: string }) {
+  return <Html><Head /><Preview>Your ZatuHealth appointment details</Preview><Body style={{ backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }}><Container style={{ padding: '28px', maxWidth: '560px' }}><Heading>ZatuHealth</Heading><Heading as="h2">Appointment confirmation</Heading><Text>Your appointment is saved for {date} at {time}.</Text><Text>{clinic} · {branch}<br />{mode}</Text><Text>Contact the clinic to confirm availability and any preparation needed.</Text><Button href="https://zatuhealth.com/app/appointments">View appointment</Button></Container></Body></Html>;
+}
+export const template = { component: Email, subject: 'Your ZatuHealth appointment confirmation', displayName: 'Appointment confirmation', previewData: { date: '2026-11-12', time: '10:00', clinic: 'Your clinic', branch: 'Main branch', mode: 'At clinic' } } satisfies TemplateEntry;

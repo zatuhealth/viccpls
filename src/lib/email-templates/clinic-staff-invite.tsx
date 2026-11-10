@@ -1,0 +1,7 @@
+import { Body, Button, Container, Head, Heading, Html, Preview, Text } from '@react-email/components';
+import type { TemplateEntry } from './registry';
+import { staffOccupationLabels } from '@/lib/clinic-staff-roles';
+function Email({ clinic = '', occupation = 'other', link = 'https://zatuhealth.com/clinic/login' }: { clinic?: string; occupation?: string; link?: string }) {
+  return <Html><Head /><Preview>Your clinic staff access is ready</Preview><Body style={{ backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }}><Container style={{ padding: '28px', maxWidth: '560px' }}><Heading>ZatuHealth</Heading><Heading as="h2">Clinic staff invitation</Heading><Text>{clinic || 'Your clinic'} has added this email address as {staffOccupationLabels[occupation] ?? 'Other staff'}.</Text><Text>Tap the button to activate your staff access. It signs you in once and expires soon. After that you can sign in with Google or a password.</Text><Button href={link} style={{ backgroundColor: '#1f5a6f', color: '#ffffff', padding: '12px 20px', borderRadius: '8px' }}>Activate staff access</Button><Text>Don’t forward this email — the button works only once.</Text></Container></Body></Html>;
+}
+export const template = { component: Email, subject: 'Your ZatuHealth clinic staff invitation', displayName: 'Clinic staff invite', previewData: { clinic: 'Your clinic' } } satisfies TemplateEntry;
